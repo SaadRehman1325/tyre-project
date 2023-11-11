@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+   "backend": "node app.js",
+    "frontend": "cd client && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
